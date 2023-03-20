@@ -1,24 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import { Chart } from "react-google-charts";
 
-function App() {
+const data = [
+  ["From", "To", "Weight"],
+  ["A", "X", 5],
+  ["A", "Y", 7],
+  ["A", "Z", 6],
+  ["B", "X", 2],
+  ["B", "Y", 9],
+  ["B", "Z", 4],
+];
+
+const options = {};
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Chart
+      chartType="Sankey"
+      width="40%"
+      height="200px"
+      data={data}
+      options={options}
+    />
   );
 }
 
