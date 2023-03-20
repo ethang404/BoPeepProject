@@ -1,28 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 import { Chart } from "react-google-charts";
 
 const data = [
-  ["From", "To", "Weight"],
-  ["A", "X", 5],
-  ["A", "Y", 7],
-  ["A", "Z", 6],
-  ["B", "X", 2],
-  ["B", "Y", 9],
-  ["B", "Z", 4],
+	["From", "To", "Weight"],
+	["Fuel", "Process Heating", 835],
+	["ProcessHeating", "Applied Energy", 860],
+	["ProcessHeating", "Loss", 378],
+	["Applied Energy", "Electricity", 84],
+	["Onsite Steam Generation", "Non-FCC process", 110],
 ];
 
 const options = {};
 export function App() {
-  return (
-    <Chart
-      chartType="Sankey"
-      width="40%"
-      height="200px"
-      data={data}
-      options={options}
-    />
-  );
+	return (
+		<div className="container">
+			<Chart chartType="Sankey" width="60%" height="100%" data={data} options={options} />
+		</div>
+	);
 }
 
 export default App;
